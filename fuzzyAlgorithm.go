@@ -42,3 +42,8 @@ func fuzzyMatch(s1, s2 string) float64 {
 
 	return match
 }
+
+func evaluateFuzzyMatch(s1, s2 string, threshold float64) (bool, float64) {
+	score := fuzzyMatch(s1, s2)
+	return score >= threshold, score
+}
