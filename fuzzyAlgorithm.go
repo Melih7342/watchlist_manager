@@ -29,3 +29,16 @@ func levenshteinDistance(s1, s2 string) int {
 
 	return matrix[len(s1)][len(s2)]
 }
+
+func fuzzyMatch(s1, s2 string) float64 {
+	if len(s1) == 0 && len(s2) == 0 {
+		return 100.0
+	}
+
+	dist := levenshteinDistance(s1, s2)
+	maxLen := max(len(s1), len(s2))
+
+	match := (1 - float64(dist)/float64(maxLen)) * 100
+
+	return match
+}
