@@ -1,0 +1,17 @@
+[
+  {"id": "001", "entityType": "PERSON", "firstName": "", "lastName": "Thanos", "aliases": ["The Mad Titan"], "dob": "1013-05-18", "nationality": "TITAN"},
+  {"id": "002", "entityType": "PERSON", "firstName": "Victor", "lastName": "Von Doom", "aliases": ["Doctor Doom", "Doom"], "dob": "1978-12-01", "nationality": "LATVERIA"},
+  {"id": "003", "entityType": "PERSON", "firstName": "Johann", "lastName": "Schmidt", "aliases": ["Red Skull"], "dob": "1899-04-11", "nationality": "DE"},
+  {"id": "004", "entityType": "PERSON", "firstName": "Erik", "lastName": "Killmonger", "aliases": ["N'Jadaka"], "dob": "1985-02-14", "nationality": "WAKANDA"},
+  {"id": "005", "entityType": "PERSON", "firstName": "Norman", "lastName": "Osborn", "aliases": ["Green Goblin"], "dob": "1965-08-22", "nationality": "US"},
+  {"id": "006", "entityType": "PERSON", "firstName": "Otto", "lastName": "Octavius", "aliases": ["Doctor Octopus", "Doc Ock"], "dob": "1968-10-15", "nationality": "US"},
+  {"id": "007", "entityType": "PERSON", "firstName": "Loki", "lastName": "Laufeyson", "aliases": ["God of Mischief"], "dob": "0965-12-17", "nationality": "ASGARD"},
+  {"id": "008", "entityType": "PERSON", "firstName": "Wilson", "lastName": "Fisk", "aliases": ["Kingpin"], "dob": "1970-07-04", "nationality": "US"},
+  {"id": "009", "entityType": "PERSON", "firstName": "", "lastName": "Ultron", "aliases": ["Peacekeeper"], "dob": "2015-05-01", "nationality": "UNKNOWN"},
+  {"id": "010", "entityType": "PERSON", "firstName": "Helmut", "lastName": "Zemo", "aliases": ["Baron Zemo"], "dob": "1978-06-16", "nationality": "SOKOVIA"},
+  {"id": "011", "entityType": "PERSON", "firstName": "Cletus", "lastName": "Kasady", "aliases": ["Carnage"], "dob": "1980-11-20", "nationality": "US"},
+  {"id": "012", "entityType": "PERSON", "firstName": "Max", "lastName": "Dillon", "aliases": ["Electro"], "dob": "1982-03-09", "nationality": "US"},
+  {"id": "013", "entityType": "PERSON", "firstName": "Quentin", "lastName": "Beck", "aliases": ["Mysterio"], "dob": "1981-05-25", "nationality": "US"},
+  {"id": "014", "entityType": "PERSON", "firstName": "Arthur", "lastName": "Harrow", "aliases": ["Ammit's Avatar"], "dob": "1975-09-18", "nationality": "US"},
+  {"id": "015", "entityType": "COMPANY", "firstName": "", "lastName": "AIM", "aliases": ["Advanced Idea Mechanics"], "dob": "1960-01-01", "nationality": "US"}
+]

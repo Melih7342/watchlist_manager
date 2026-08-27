@@ -1,0 +1,17 @@
+[
+  {"id": "001", "entityType": "PERSON", "firstName": "Albert", "lastName": "Wesker", "aliases": ["The Mastermind", "A.W."], "dob": "1960-08-08", "nationality": "US"},
+  {"id": "002", "entityType": "PERSON", "firstName": "Oswell E.", "lastName": "Spencer", "aliases": ["Lord Spencer"], "dob": "1923-03-12", "nationality": "UK"},
+  {"id": "003", "entityType": "PERSON", "firstName": "William", "lastName": "Birkin", "aliases": ["G", "Dr. Birkin"], "dob": "1962-07-30", "nationality": "US"},
+  {"id": "004", "entityType": "PERSON", "firstName": "James", "lastName": "Marcus", "aliases": ["Queen Leech"], "dob": "1918-12-04", "nationality": "US"},
+  {"id": "005", "entityType": "PERSON", "firstName": "Nikolai", "lastName": "Zinoviev", "aliases": ["Silver Fox"], "dob": "1963-09-02", "nationality": "RU"},
+  {"id": "006", "entityType": "PERSON", "firstName": "Brian", "lastName": "Irons", "aliases": ["Chief Irons"], "dob": "1943-05-18", "nationality": "US"},
+  {"id": "007", "entityType": "PERSON", "firstName": "Annette", "lastName": "Birkin", "aliases": ["A. Birkin"], "dob": "1964-01-15", "nationality": "US"},
+  {"id": "008", "entityType": "PERSON", "firstName": "Sergei", "lastName": "Vladimir", "aliases": ["Colonel Vladimir"], "dob": "1940-02-28", "nationality": "RU"},
+  {"id": "009", "entityType": "PERSON", "firstName": "Alexia", "lastName": "Ashford", "aliases": ["Queen Alexia"], "dob": "1971-04-12", "nationality": "UK"},
+  {"id": "010", "entityType": "PERSON", "firstName": "Alfred", "lastName": "Ashford", "aliases": ["Cross-dresser"], "dob": "1971-04-12", "nationality": "UK"},
+  {"id": "011", "entityType": "PERSON", "firstName": "Excella", "lastName": "Gionne", "aliases": ["Tricell CEO"], "dob": "1975-11-20", "nationality": "IT"},
+  {"id": "012", "entityType": "PERSON", "firstName": "Derek C.", "lastName": "Simmons", "aliases": ["Family Head"], "dob": "1958-10-09", "nationality": "US"},
+  {"id": "013", "entityType": "PERSON", "firstName": "Carla", "lastName": "Radames", "aliases": ["Ada Wong Clone"], "dob": "1984-06-21", "nationality": "US"},
+  {"id": "014", "entityType": "PERSON", "firstName": "Osmund", "lastName": "Saddler", "aliases": ["Lord Saddler"], "dob": "1955-03-14", "nationality": "ES"},
+  {"id": "015", "entityType": "COMPANY", "firstName": "", "lastName": "Umbrella Corporation", "aliases": ["Umbrella", "White Umbrella"], "dob": "1968-03-22", "nationality": "UK"},
+]
