@@ -43,7 +43,14 @@ func fuzzyMatch(s1, s2 string) float64 {
 	return match
 }
 
-func EvaluateFuzzyMatch(s1, s2 string, threshold float64) (bool, float64) {
+func evaluateFuzzyMatch(s1, s2 string, threshold float64) (bool, float64) {
 	score := fuzzyMatch(s1, s2)
 	return score >= threshold, score
+}
+
+func evaluateDateMatch(dob1, dob2 string) bool {
+	if dob1 == "" || dob2 == "" {
+		return false
+	}
+	return dob1 == dob2
 }
