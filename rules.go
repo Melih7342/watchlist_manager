@@ -57,36 +57,34 @@ func containsColumn(columns []string, colName string) bool {
 	return false
 }
 
-func litRule(req ScreeningRequest, indexedList IndexedWatchlist) (string, bool, float64) {
+func litRule(req ScreeningRequest, indexedList IndexedWatchlist) MatchResult {
 	hasFirstName := containsColumn(indexedList.ActiveColumns, "firstName")
 	hasLastName := containsColumn(indexedList.ActiveColumns, "lastName")
 	hasAliases := containsColumn(indexedList.ActiveColumns, "aliases")
-	hasDOB := containsColumn(indexedList.ActiveColumns, "DOB") // Achtung: Vorher hattest du "dob" klein geschrieben, Go ist Case-Sensitive!
+	hasDOB := containsColumn(indexedList.ActiveColumns, "DOB")
 
-	// Wir iterieren über die Watchlist
-	for _, indexedEntry := range indexedList.Entries {
+	for _, entry := range indexedList.Entries {
 
-		// 1. Vornamen / Nachnamen checken
 		var firstNameHit, lastNameHit bool
 		var firstNameScore, lastNameScore float64
 
 		if hasFirstName {
-			firstNameHit, firstNameScore = evaluateFuzzyMatch(indexedEntry.FirstName, req.FirstName, 80.0)
+			firstNameHit, firstNameScore = evaluateFuzzyMatch(entry.FirstName, req.FirstName, 80.0)
 		}
 		if hasLastName {
-			lastNameHit, lastNameScore = evaluateFuzzyMatch(indexedEntry.LastName, req.LastName, 80.0)
+			lastNameHit, lastNameScore = evaluateFuzzyMatch(entry.LastName, req.LastName, 80.0)
 		}
 
 		dobHit := false
 		if hasDOB {
-			dobHit = evaluateDateMatch(indexedEntry.DOB, req.DOB)
+			dobHit = evaluateDateMatch(entry.DOB, req.DOB)
 		}
 
 		var aliasesHit bool
 		var highestAliasScore float64 = 0.0
 
 		if hasAliases {
-			for _, listAlias := range indexedEntry.Aliases {
+			for _, listAlias := range entry.Aliases {
 				for _, reqAlias := range req.Aliases {
 					score := fuzzyMatch(listAlias, reqAlias)
 					if score > highestAliasScore {
@@ -99,12 +97,35 @@ func litRule(req ScreeningRequest, indexedList IndexedWatchlist) (string, bool, 
 			}
 		}
 
-		if (firstNameHit && lastNameHit) || aliasesHit {
+		if ((firstNameHit && lastNameHit) || aliasesHit) || (firstNameHit && lastNameHit && dobHit) {
 
-			finalScore := max(lastNameScore, highestAliasScore)
-			return "litRule", true, finalScore
+			hitDetails := make(map[string]float64)
+
+			if firstNameHit {
+				hitDetails["firstName"] = firstNameScore
+			}
+			if lastNameHit {
+				hitDetails["lastName"] = lastNameScore
+			}
+			if aliasesHit {
+				hitDetails["aliases"] = highestAliasScore
+			}
+			if dobHit {
+				hitDetails["DOB"] = 100.0
+			}
+
+			return MatchResult{
+				IsHit:         true,
+				RuleName:      "litRule_Standard_Match",
+				WatchlistID:   entry.ID,
+				WatchlistName: entry.FirstName + " " + entry.LastName,
+				Details:       hitDetails,
+			}
 		}
 	}
 
-	return "litRule", false, 0.0
+	return MatchResult{
+		IsHit:    false,
+		RuleName: "litRule_Standard_Match",
+	}
 }
