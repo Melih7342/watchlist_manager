@@ -4,7 +4,7 @@ func rcRule(req ScreeningRequest, indexedList IndexedWatchlist) MatchResult {
 	hasFirstName := containsColumn(indexedList.ActiveColumns, "firstName")
 	hasLastName := containsColumn(indexedList.ActiveColumns, "lastName")
 	hasAliases := containsColumn(indexedList.ActiveColumns, "aliases")
-	hasDOB := containsColumn(indexedList.ActiveColumns, "DOB")
+	hasDOB := containsColumn(indexedList.ActiveColumns, "dob")
 
 	for _, entry := range indexedList.Entries {
 

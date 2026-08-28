@@ -1,5 +1,7 @@
 package main
 
+import "strings"
+
 func levenshteinDistance(s1, s2 string) int {
 	matrix := make([][]int, len(s1)+1)
 	for i := range matrix {
@@ -9,7 +11,7 @@ func levenshteinDistance(s1, s2 string) int {
 	for i := 0; i <= len(s1); i++ {
 		matrix[i][0] = i
 	}
-	for j := 0; j <= len(s1); j++ {
+	for j := 0; j <= len(s2); j++ {
 		matrix[0][j] = j
 	}
 
@@ -44,7 +46,7 @@ func fuzzyMatch(s1, s2 string) float64 {
 }
 
 func evaluateFuzzyMatch(s1, s2 string, threshold float64) (bool, float64) {
-	score := fuzzyMatch(s1, s2)
+	score := fuzzyMatch(strings.ToLower(s1), strings.ToLower(s2))
 	return score >= threshold, score
 }
 

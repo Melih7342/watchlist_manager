@@ -13,5 +13,5 @@
   {"id": "012", "entityType": "PERSON", "firstName": "Derek C.", "lastName": "Simmons", "aliases": ["Family Head"], "dob": "1958-10-09", "nationality": "US"},
   {"id": "013", "entityType": "PERSON", "firstName": "Carla", "lastName": "Radames", "aliases": ["Ada Wong Clone"], "dob": "1984-06-21", "nationality": "US"},
   {"id": "014", "entityType": "PERSON", "firstName": "Osmund", "lastName": "Saddler", "aliases": ["Lord Saddler"], "dob": "1955-03-14", "nationality": "ES"},
-  {"id": "015", "entityType": "COMPANY", "firstName": "", "lastName": "Umbrella Corporation", "aliases": ["Umbrella", "White Umbrella"], "dob": "1968-03-22", "nationality": "UK"},
+  {"id": "015", "entityType": "COMPANY", "firstName": "", "lastName": "Umbrella Corporation", "aliases": ["Umbrella", "White Umbrella"], "dob": "1968-03-22", "nationality": "UK"}
 ]

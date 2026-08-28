@@ -41,16 +41,28 @@ func (c *ScreeningController) HandleScreening(w http.ResponseWriter, r *http.Req
 
 func main() {
 	litColumns := []string{"firstName", "lastName", "aliases"}
-	litIndex, _ := loadIndexedList("lists/literature.json", litColumns)
+	litIndex, err := loadIndexedList("lists/literature.json", litColumns)
+	if err != nil {
+		fmt.Printf("Error loading the Literature list %v", err)
+	}
 
-	mvColumns := []string{"firstName", "lastName", "aliases", "DOB"}
-	mvIndex, _ := loadIndexedList("lists/marvel.json", mvColumns)
+	mvColumns := []string{"firstName", "lastName", "aliases", "dob"}
+	mvIndex, err := loadIndexedList("lists/marvel.json", mvColumns)
+	if err != nil {
+		fmt.Printf("Error loading the Marvel list %v", err)
+	}
 
 	ghColumns := []string{"firstName", "lastName", "aliases"}
-	ghIndex, _ := loadIndexedList("lists/ghibli.json", ghColumns)
+	ghIndex, err := loadIndexedList("lists/ghibli.json", ghColumns)
+	if err != nil {
+		fmt.Printf("Error loading the Ghibli list %v", err)
+	}
 
-	rcColumns := []string{"firstName", "lastName", "aliases", "DOB"}
-	rcIndex, _ := loadIndexedList("lists/raccoon_city.json", rcColumns)
+	rcColumns := []string{"firstName", "lastName", "aliases", "dob"}
+	rcIndex, err := loadIndexedList("lists/raccoon_city.json", rcColumns)
+	if err != nil {
+		fmt.Printf("Error loading the Raccoon City list %v", err)
+	}
 
 	controller := &ScreeningController{
 		LitIndex: litIndex,
@@ -59,9 +71,9 @@ func main() {
 		RcIndex:  rcIndex,
 	}
 
-	http.HandleFunc("wlm/screen", controller.HandleScreening)
+	http.HandleFunc("/wlm/screen", controller.HandleScreening)
 	fmt.Println("Server running on http://localhost:9090")
-	err := http.ListenAndServe(":9090", nil)
+	err = http.ListenAndServe(":9090", nil)
 	if err != nil {
 		fmt.Println("Error starting the server")
 	}
