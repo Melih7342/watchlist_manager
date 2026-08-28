@@ -15,7 +15,7 @@ To ensure maximum performance, watchlists are indexed in-memory at startup, whil
 ## 🛠️ Tech Stack
 
 * **Backend:** Go (Standard Library: `net/http`, `encoding/json`, `database/sql`)
-* **Database:** PostgreSQL 15 (via `github.com/lib/pq`)
+* **Database:** PostgreSQL 16 (via `github.com/lib/pq`)
 * **Infrastructure:** Docker & Docker Compose
 
 ## 📦 Local Setup
