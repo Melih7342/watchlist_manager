@@ -1,6 +1,7 @@
 package main
 
 import (
+	"database/sql"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -11,6 +12,7 @@ type ScreeningController struct {
 	MvIndex  IndexedWatchlist
 	GhIndex  IndexedWatchlist
 	RcIndex  IndexedWatchlist
+	DB       *sql.DB
 }
 
 func (c *ScreeningController) HandleScreening(w http.ResponseWriter, r *http.Request) {
@@ -28,6 +30,7 @@ func (c *ScreeningController) HandleScreening(w http.ResponseWriter, r *http.Req
 	}
 
 	result := RunScreening(req, c.LitIndex, c.MvIndex, c.GhIndex, c.RcIndex)
+	LogScreening(c.DB, req, result)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
@@ -40,6 +43,9 @@ func (c *ScreeningController) HandleScreening(w http.ResponseWriter, r *http.Req
 }
 
 func main() {
+	db := InitDB()
+	defer db.Close()
+
 	litColumns := []string{"firstName", "lastName", "aliases"}
 	litIndex, err := loadIndexedList("lists/literature.json", litColumns)
 	if err != nil {
@@ -69,6 +75,7 @@ func main() {
 		MvIndex:  mvIndex,
 		GhIndex:  ghIndex,
 		RcIndex:  rcIndex,
+		DB:       db,
 	}
 
 	http.HandleFunc("/wlm/screen", controller.HandleScreening)

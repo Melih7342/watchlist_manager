@@ -1,0 +1,16 @@
+services:
+  audit-db:
+    image: postgres:16-alpine
+    container_name: wlm-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: auditor
+      POSTGRES_PASSWORD: Password!
+      POSTGRES_DB: wlm_audit
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
