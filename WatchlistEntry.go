@@ -1,4 +1,4 @@
-package watchlist_manager
+package main
 
 type WatchlistEntry struct {
 	ID          string   `json:"id"`

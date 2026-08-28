@@ -1,4 +1,4 @@
-package watchlist_manager
+package main
 
 func rcRule(req ScreeningRequest, indexedList IndexedWatchlist) MatchResult {
 	hasFirstName := containsColumn(indexedList.ActiveColumns, "firstName")

@@ -1,4 +1,4 @@
-package watchlist_manager
+package main
 
 type MatchResult struct {
 	IsHit         bool               `json:"isHit"`

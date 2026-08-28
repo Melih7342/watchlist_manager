@@ -1,4 +1,4 @@
-package watchlist_manager
+package main
 
 type IndexedWatchlist struct {
 	Entries       []WatchlistEntry `json:"entries"`

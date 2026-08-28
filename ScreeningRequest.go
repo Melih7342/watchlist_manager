@@ -1,4 +1,4 @@
-package watchlist_manager
+package main
 
 type ScreeningRequest struct {
 	RequestId   string   `json:"request_id"`

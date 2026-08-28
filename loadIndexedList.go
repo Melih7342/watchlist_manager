@@ -1,4 +1,4 @@
-package watchlist_manager
+package main
 
 import (
 	"encoding/json"

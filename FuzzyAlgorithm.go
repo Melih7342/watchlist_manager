@@ -1,4 +1,4 @@
-package watchlist_manager
+package main
 
 func levenshteinDistance(s1, s2 string) int {
 	matrix := make([][]int, len(s1)+1)
